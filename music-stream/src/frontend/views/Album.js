@@ -1,7 +1,7 @@
 function Album(){
 
 
-
+<h1>alb</h1>
 
 }
 
