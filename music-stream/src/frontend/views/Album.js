@@ -1,7 +1,10 @@
 function Album(){
 
-
+return(
 <h1>alb</h1>
+
+)
+
 
 }
 

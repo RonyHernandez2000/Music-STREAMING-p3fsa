@@ -1,13 +1,14 @@
+import React from 'react'
 
-function Error404() {
+const PageNotFound = () => {
     return (
-        <main>
-            <h1>404: PAGE NOT FOUND</h1>
-            <p>Oops, sorry, we can't find this page!</p>
-            <img src="http://localhost:5000/images/kittykat.jpeg" alt="cute cat pic" />
-        </main>
-    );
-    
+        <div id="wrapper">
+            <img src="https://i.imgur.com/qIufhof.png" />
+            <div id="info">
+                <h3>This page could not be found</h3>
+            </div>
+        </div >
+    )
 }
 
-export default Error404;
+export default PageNotFound

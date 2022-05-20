@@ -9,7 +9,7 @@ function Header (){
       <Nav>
 <Nav.Item>
   <Nav.Link
-    href="">Rony's Shop
+    href="/">Rony's Shop
   </Nav.Link>
 </Nav.Item>
 <Nav.Item>

@@ -14,13 +14,13 @@ function Main(){
         <Header/>
         <Audioplayer/>
         <Routes>
-        <Route exact path="/" component={<Home/>} />
+        <Route exact path="/" element={<Home/>} />
         <Route path='/album' element={<Album/>}/>
         <Route path='/song' element={<Song/>}/>
         <Route path='/artist' element={<Artist/>}/>
         <Route path='/artist' element={<Artist/>}/>
-        <Route path="/" component={<Error404/>} />
-        <Route path="*" element={<Navigate to="/"/>}> </Route>
+        <Route path="*" element={<Error404/>} />
+
         </Routes>
         </BrowserRouter>
             
