@@ -16,18 +16,17 @@ app.post('/refresh',(req,res)=> {
         clientSecret:'09ad56a651aa43449b596fe96d5c100c',
         refreshToken
     })
-})
-
+    
  spotifytApi.refreshAccessToken().then((data)=> {
-    console.log('The access token has been refreshed !')
+    console.log(data);
 
     // save the access token
     spotifytApi.setAccessToken(data.body['access_token']);
- }, .catch(() =
- function(err) {
-     console.log('could not refresh access token', err);
- }
- );
+ }) .catch(() => {
+    res.sendStatus(400)
+ });
+})
+
 
  
 
