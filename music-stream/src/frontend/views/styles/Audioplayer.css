@@ -1,10 +1,12 @@
 .audioPlayer{
 --primary: #126BF2;
 --secondary : #F29100;
-
+    top: 50%;
+    left: 50%;
     align-items: center;
     display: flex;
-    width: 700px;
+    width: auto;
+    justify-content: center;
 }
 
 .forwardBackward{
@@ -51,7 +53,7 @@ color:var(--primary)
 
 .progressBar{
     --bar-bg:var(--primary);
-    --seek-before-width:100px;
+    --seek-before-width:0;
     --seek-before-color:#126cf200;
     --knobby:var(--secondary);
     --selectedKnobby:#f2f2f2ab;
