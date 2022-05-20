@@ -29,6 +29,9 @@ function Header (){
   <Nav.Item>
     <Nav.Link href="/song">Song</Nav.Link>
   </Nav.Item>
+  <Nav.Item>
+    <Nav.Link href="/login">login</Nav.Link>
+  </Nav.Item>
 </Nav>
 </Navbar>
         </div>

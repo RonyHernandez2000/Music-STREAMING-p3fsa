@@ -9,8 +9,29 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.post('/refresh',(req,res)=> {
-    const refreshToken = req.params.refreshToken
+    const refreshToken = req.body.refreshToken
+    const spotifytApi = new SpotifyWebApi({
+        redirectUri:'http://localhost:3000',
+        clientId:'be4f66a30e1d4762b7b21785ca4555f8',
+        clientSecret:'09ad56a651aa43449b596fe96d5c100c',
+        refreshToken
+    })
 })
+
+ spotifytApi.refreshAccessToken().then((data)=> {
+    console.log('The access token has been refreshed !')
+
+    // save the access token
+    spotifytApi.setAccessToken(data.body['access_token']);
+ }, .catch(() =
+ function(err) {
+     console.log('could not refresh access token', err);
+ }
+ );
+
+ 
+
+
 
 app.post('/login', (req, res) => {
     const code = req.body.code
