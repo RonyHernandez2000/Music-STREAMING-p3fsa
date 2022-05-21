@@ -1,6 +1,7 @@
 .audioPlayer{
 --primary: #126BF2;
 --secondary : #F29100;
+--tertiary :#F2F2F2 ;
     top: 50%;
     left: 50%;
     align-items: center;
@@ -55,7 +56,7 @@ color:var(--primary)
     --bar-bg:var(--primary);
     --seek-before-width:0;
     --seek-before-color:#126cf200;
-    --knobby:var(--secondary);
+    --knobby:var(--tertiary);
     --selectedKnobby:#f2f2f2ab;
 
     appearance: none;

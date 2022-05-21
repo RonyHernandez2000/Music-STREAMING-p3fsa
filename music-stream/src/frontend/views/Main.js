@@ -6,13 +6,14 @@ import Artist from './Artist';
 import Error404 from './Error404';
 import { Audioplayer } from './Audioplayer';
 import Header from './Header';
+import './styles/Main.css'
 
 import {BrowserRouter,Navigate,Route,Routes} from 'react-router-dom';
 import Login from './Login';
 
 function Main(){
     return(
-        <div>
+        <div className='main-body'>
         <BrowserRouter>
         <Header/>
         <Audioplayer/>

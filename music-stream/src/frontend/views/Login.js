@@ -11,8 +11,15 @@ export default function Login(){
     const signInWithGoogle=()=>{
         const provider = new GoogleAuthProvider();
        signInWithPopup(authentication, provider)
-       .then((re) =>
-    )}
+       .then((re) =>{
+           console.log(re);
+            
+       })
+       .catch((err) =>{
+        console.log(err)
+       })
+    }
+
 return(
   
     <Container className="d-flex justify-content-center align-items-center" style={{ minHeight:"100vh"}}>
