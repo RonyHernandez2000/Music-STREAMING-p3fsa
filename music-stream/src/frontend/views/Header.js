@@ -6,7 +6,9 @@ import Home from "./Home";
 import { Link } from "react-router-dom";
 
 function Header (){
+const [image,setImage]=("https://www.clipartmax.com/png/middle/253-2536520_homicide-cleanup-generic-user-icon.png"
 
+);
  
     return(
       <div className="Nav-boarder">

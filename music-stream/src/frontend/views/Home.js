@@ -1,13 +1,9 @@
 import React from "react";
-import Header from "./Header";
-import { Audioplayer } from './Audioplayer';
-import {BrowserRouter,Navigate,Route,Routes} from 'react-router-dom';
-import useAuth from "./spotify";
 
 
 
-function Home({code}){
-    const accessToken = useAuth(code)
+function Home(){
+   
     return(
         
 <div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { authentication } from './Firebase/firebase-config';
-import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth';
+import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
+import { loginEndpoint } from './spotify';
 
 
 
@@ -21,12 +22,16 @@ export default function Login(){
 
 return(
   
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight:"100vh"}}>
+    <div>
+        <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.Png"></img>
+        <a href={loginEndpoint}> Sign In With Spotify</a>
+   <button onClick={signInWithGoogle} > Sign In with Google</button>
 
-        <button onClick={signInWithGoogle} > Sign In with Google</button>
+    </div>
 
+     
 
-    </Container>
+    
 )
 
 }
