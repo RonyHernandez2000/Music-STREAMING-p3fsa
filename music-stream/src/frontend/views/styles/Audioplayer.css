@@ -53,7 +53,7 @@ color:var(--primary)
 }
 
 .progressBar{
-    --bar-bg:var(--primary);
+    --bar-bg:var(--secondary);
     --seek-before-width:0;
     --seek-before-color:#126cf200;
     --knobby:var(--tertiary);
