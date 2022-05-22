@@ -8,7 +8,7 @@ import apiClient from "./spotify"
 
 
 function Header (){
-const [image,setImage]=useState("https://www.clipartmax.com/png/middle/253-2536520_homicide-cleanup-generic-user-icon.png"
+const [image,setImage]=useState("http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"
 
 );
 useEffect(() => {

@@ -1,0 +1,13 @@
+.login{
+    display: flex;
+    margin: auto;
+  width: auto;
+  justify-content: space-evenly;
+  padding: 150px;
+    
+}
+
+.login a{
+    width: auto;
+    height:auto
+}

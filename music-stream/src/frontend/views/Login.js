@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { authentication } from './Firebase/firebase-config';
 import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
 import { loginEndpoint } from './spotify';
+import './styles/Login.css'
 
 
 
@@ -21,15 +22,15 @@ export default function Login(){
     }
 
 return(
-  
-    <div>
-        <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.Png"></img>
-        <a href={loginEndpoint}> Sign In With Spotify</a>
-   <button onClick={signInWithGoogle} > Sign In with Google</button>
 
-    </div>
+<div className="login">
+        
+        <a   className="btn btn-success btn-lg" href={loginEndpoint}> Sign In With Spotify</a>
+        <br/>
+   <button className="btn btn-danger btn-lg btn-block" onClick={signInWithGoogle} > Sign In with Google</button>
 
-     
+    </div> 
+    
 
     
 )

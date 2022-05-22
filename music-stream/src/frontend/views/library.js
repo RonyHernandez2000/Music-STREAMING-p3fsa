@@ -1,9 +1,12 @@
 import React from 'react'
 
-function library() {
+
+function Library() {
   return (
-    <div>library</div>
+    <div>
+      <h1>Library</h1>
+    </div>
   )
 }
 
-export default library
+export default Library

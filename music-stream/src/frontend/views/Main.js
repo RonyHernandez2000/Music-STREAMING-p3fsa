@@ -7,11 +7,12 @@ import Error404 from './Error404';
 import { Audioplayer } from './Audioplayer';
 import Header from './Header';
 import './styles/Main.css'
-
 import {BrowserRouter,Navigate,Route,Routes} from 'react-router-dom';
 import Login from './Login';
 import { useEffect,useState } from 'react';
 import { setClientToken } from './spotify';
+import Library from './library';
+import Upload from './upload';
 
 function Main(){
     const[token, setToken] = useState("");
@@ -41,6 +42,8 @@ function Main(){
         <Audioplayer/>
         <Routes>
         <Route exact path="/" element={<Home/>} />
+        <Route path='/upload' element={<Upload/>}/>
+        <Route path='/library' element={<Library/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/album' element={<Album/>}/>
         <Route path='/song' element={<Song/>}/>
