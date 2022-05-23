@@ -5,21 +5,23 @@ import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
 import { loginEndpoint } from './spotify';
 import './styles/Login.css'
 
+export const signInWithGoogle=()=>{
+    const provider = new GoogleAuthProvider();
+   signInWithPopup(authentication, provider)
+   .then((re) =>{
+       console.log(re);
+       console.log(re.user.accessToken)
+        
+   })
+   .catch((err) =>{
+    console.log(err)
+   })
+   return signInWithGoogle
+}
 
 
 export default function Login(){
 
-    const signInWithGoogle=()=>{
-        const provider = new GoogleAuthProvider();
-       signInWithPopup(authentication, provider)
-       .then((re) =>{
-           console.log(re);
-            
-       })
-       .catch((err) =>{
-        console.log(err)
-       })
-    }
 
 return(
 

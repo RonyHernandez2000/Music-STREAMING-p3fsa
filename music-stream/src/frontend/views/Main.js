@@ -13,6 +13,9 @@ import { useEffect,useState } from 'react';
 import { setClientToken } from './spotify';
 import Library from './library';
 import Upload from './upload';
+import signInWithGoogle from './Login';
+import { authentication } from './Firebase/firebase-config';
+
 
 function Main(){
     const[token, setToken] = useState("");
@@ -34,7 +37,7 @@ function Main(){
         
         
     },[]);
-    return !token ? (<Login/>
+    return !token | !signInWithGoogle ? (<Login/>
     ):(
         <div className='main-body'>
         <BrowserRouter>
