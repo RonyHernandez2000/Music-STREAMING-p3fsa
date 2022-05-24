@@ -4,10 +4,17 @@
   width: auto;
   justify-content: space-evenly;
   padding: 150px;
+  background-color: #126BF2;
+  height: 100vh;
+  
     
 }
 
 .login a{
     width: auto;
-    height:auto
+    height: 50px;
+}
+.login button{
+  width: auto;
+    height: 50px;
 }

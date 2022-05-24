@@ -1,4 +1,3 @@
-
 import Home from './Home';
 import Album from './album';
 import Song from './song';
@@ -17,7 +16,10 @@ import signInWithGoogle from './Login';
 import { authentication } from './Firebase/firebase-config';
 import { getIdTokenResult } from 'firebase/auth';
 
-console.log(signInWithGoogle)
+
+const googleToken = localStorage.setItem("auth", auth);
+const GetGoogleToken = localStorage.getItem("auth", googleToken)
+console.log(googleToken)
 
 function Main(){
     const[token, setToken] = useState("");
@@ -40,7 +42,7 @@ function Main(){
         
         
     },[]);
-    return !token  ? (<Login/>
+    return !token && auth ? (<Login/>
     ):(
         <div className='main-body'>
         <BrowserRouter>

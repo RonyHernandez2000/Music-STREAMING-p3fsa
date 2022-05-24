@@ -1,25 +1,31 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { authentication } from './Firebase/firebase-config';
-import { signInWithPopup,GoogleAuthProvider } from 'firebase/auth'
+import { signInWithPopup,GoogleAuthProvider, getAuth } from 'firebase/auth'
 import { loginEndpoint } from './spotify';
 import './styles/Login.css'
 import { useEffect,useState } from 'react';
 import { setClientToken } from './spotify';
 
-export const signInWithGoogle=()=>{
+    const auth = getAuth();
+    
+ const signInWithGoogle=()=>{
+   
     const provider = new GoogleAuthProvider();
    signInWithPopup(authentication, provider)
    .then((re) =>{
       
 
-       console.log(re.user.accessToken)
-        
+      
    })
    .catch((err) =>{
     console.log(err)
    })
+ 
 }
+
+
+
 
 
 export default function Login(){
