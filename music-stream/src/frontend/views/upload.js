@@ -24,12 +24,15 @@ function Upload() {
     const onChange = e => {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);
-        
+
     };
     const onSubmit =  async e => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('file', file);
+        // formData.append('name', name);
+        // formData.append('size', size);
+        // formData.append('type', type);
+        formData.append('mp3File', filename);
 
     try {
         const res = await axios.post('/upload',formData,{
@@ -51,9 +54,9 @@ function Upload() {
 
   return (
     <Fragment>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} encType="multipart/form-data">
         <div className="custom-file mb-4">
-        <input type="file"  accept=".mp3" className="custom-file-input" onChange={onChange && readMp3 }/>
+        <input type="file" filename="mp3File" accept=".mp3" className="form-control=file" onChange={onChange && readMp3 }/>
         <label className="custom-file-label" htmlFor='customFile'>{filename}
         </label>
     </div>

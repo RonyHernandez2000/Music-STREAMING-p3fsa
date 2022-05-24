@@ -71,7 +71,7 @@ const Audioplayer = () => {
 // Buttons
   return (
     <div className='audioPlayer'>
-        <audio ref={audioPlayer}  src='' preload='metadata'></audio>
+        <audio ref={audioPlayer}  src='/upload/${}' preload='metadata'></audio>
         <button className='forwardBackward' onClick={backThirty}>30<IoPlayBack/></button>
         <button onClick={togglePlayPause} className='playPause'>{isPlaying ? <IoPauseSharp/>:<IoPlay className='play'/>}</button>
         <button className='forwardBackward' onClick={forwardThirty}> <IoPlayForward/>30 </button>

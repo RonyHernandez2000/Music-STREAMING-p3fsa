@@ -1,49 +1,54 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors')
 const router = express.Router();
 const multer = require('multer');
 const fileUpload = require('express-fileupload');
-const Mp3 = require('../backend/mp3')
+
+
+require('dotenv').config();
 
 const app = express();
+const port = process.env.PORT || 8080;
 
-const storage = multer.diskStorage({
-    destination:(req, file , callback) => {
-        callback(null,".../public/upload")
-    },
-    filename:(req,file, callback) =>{
-        callback(null, file.originalname);
-    }
-})
+app.use(cors())
+app.use(express.json());
 
-const upload = multer({storage: storage});
-// crud
-router.get('/', (req, res) => {
-    Mp3.find()
-        .then((mp3))
+const uri = process.env.ATLAS_URI;
 
-})
-
-
-
-
-// this is for firebase only
-app.use(fileUpload());
-
-
-
-app.post('/upload', (req, res) => {
-    if(req.files === null) {
-        return res.status(400).json({msg: 'No files were uploaded'});
-    }
-    const file = req.files.file;
-// where i put file in db
-    file.mv(`${__dirname}/music-stream/public/uploads/${file.name}`, err =>{
-        if (err){
-            console.error(err);
-            return res.status(500).send(err);
-        }
-    });
-    res.json({ fileName: file.name, filePath: `/upload/${file.name}` });
+mongoose.connect(uri, {
+    useNewUrlParser: true
 });
 
-app.listen(5000, () => console.log('Server Started!'));
+app.listen(port, () => console.log(`The app is running on port : ${port}`));
+
+const connection = mongoose.connection;
+connection.once('open',() => console.log('MongoDb connection open'));
+
+
+
+
+
+
+
+// // this is for firebase only
+// app.use(fileUpload());
+
+
+
+// app.post('/upload', (req, res) => {
+//     if(req.files === null) {
+//         return res.status(400).json({msg: 'No files were uploaded'});
+//     }
+//     const file = req.files.file;
+// // where i put file in db
+//     file.mv(`${__dirname}/music-stream/public/uploads/${file.name}`, err =>{
+//         if (err){
+//             console.error(err);
+//             return res.status(500).send(err);
+//         }
+//     });
+//     res.json({ fileName: file.name, filePath: `/upload/${file.name}` });
+// });
+
+// app.listen(5000, () => console.log('Server Started!'));
