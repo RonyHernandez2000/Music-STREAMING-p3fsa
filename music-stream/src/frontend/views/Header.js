@@ -8,9 +8,9 @@ import apiClient from "./spotify"
 
 
 function Header (){
-const [image,setImage]=useState("http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png"
+const [image,setImage]=useState("http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png");
 
-);
+
 useEffect(() => {
   apiClient.get("me").then(response => {setImage(response.data.images[0].url);});
 }, [])

@@ -15,10 +15,13 @@ import Library from './library';
 import Upload from './upload';
 import signInWithGoogle from './Login';
 import { authentication } from './Firebase/firebase-config';
+import { getIdTokenResult } from 'firebase/auth';
 
+console.log(signInWithGoogle)
 
 function Main(){
     const[token, setToken] = useState("");
+   
 
     useEffect(() =>{
         const token = window.localStorage.getItem("token");
@@ -37,7 +40,7 @@ function Main(){
         
         
     },[]);
-    return !token | !signInWithGoogle ? (<Login/>
+    return !token  ? (<Login/>
     ):(
         <div className='main-body'>
         <BrowserRouter>

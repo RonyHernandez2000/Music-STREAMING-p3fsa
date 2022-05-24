@@ -11,13 +11,13 @@ app.post('/upload', (req, res) => {
     }
     const file = req.files.file;
 // where i put file in db
-    file.mv(`${__dirname}/music-stream/public/uploads/${file.name}`, err =>{
+    file.mv(`${__dirname}/music-stream/public/upload/${file.name}`, err =>{
         if (err){
             console.error(err);
             return res.status(500).send(err);
         }
     });
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    res.json({ fileName: file.name, filePath: `/upload/${file.name}` });
 });
 
 app.listen(5000, () => console.log('Server Started!'));
