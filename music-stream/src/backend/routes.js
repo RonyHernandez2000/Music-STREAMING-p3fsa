@@ -21,7 +21,7 @@ const upload = multer({storage: storage});
 // get mp3 files
 router.get("/", (req, res) => {
     Mp3.find()
-        .then((mp3File)=> res.json(mp3File))
+        .then((mp3)=> res.json(mp3))
         .catch((err) => res.status(400).json(`Error: ${err}`));
 
 });
@@ -61,3 +61,4 @@ router.put("/update/:id", upload.single("mp3File"), (req, res) => {
 
 })
 
+module.exports = router;

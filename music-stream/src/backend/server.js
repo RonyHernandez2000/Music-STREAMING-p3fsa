@@ -20,6 +20,9 @@ mongoose.connect(uri, {
     useNewUrlParser: true
 });
 
+const mp3Router = require('./routes')
+app.use('/routes', mp3Router);
+
 app.listen(port, () => console.log(`The app is running on port : ${port}`));
 
 const connection = mongoose.connection;
