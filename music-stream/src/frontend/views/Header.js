@@ -27,7 +27,6 @@ useEffect(() => {
   <a href="/">Home</a>
   <a href="/library">Library</a>
   <a href="/upload">Upload</a>
-  <a href="#">Portefolio</a>
   <a href="/login">Login</a>
   <div class="animation start-home"></div>
 </nav>

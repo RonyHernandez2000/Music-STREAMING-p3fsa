@@ -17,9 +17,6 @@ import { authentication } from './Firebase/firebase-config';
 import { getIdTokenResult } from 'firebase/auth';
 
 
-const googleToken = localStorage.setItem("auth", auth);
-const GetGoogleToken = localStorage.getItem("auth", googleToken)
-console.log(googleToken)
 
 function Main(){
     const[token, setToken] = useState("");
@@ -42,7 +39,7 @@ function Main(){
         
         
     },[]);
-    return !token && auth ? (<Login/>
+    return !token ? (<Login/>
     ):(
         <div className='main-body'>
         <BrowserRouter>
