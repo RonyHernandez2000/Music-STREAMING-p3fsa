@@ -7,6 +7,9 @@ import{IoPauseSharp} from "react-icons/io5"
 
 
 
+
+
+
 const Audioplayer = () => {
   const  [isPlaying, SetIsPlaying]= useState(false);
   const [duration, setDuration] = useState(0);

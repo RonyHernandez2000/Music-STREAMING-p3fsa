@@ -1,15 +1,15 @@
 # Music-STREAMING-p3fsa
 
-### 2. Description
+### Description
 
 ```
 This app is supposed to let you upload a mp3 file then be able to play it as while it appear on your library
 ```
 
-### 3. Demo
+###  Demo
 (deployment here )
 
-### 4. Technologies
+### Technologies
 
 
 ```
@@ -35,7 +35,7 @@ This app is supposed to let you upload a mp3 file then be able to play it as whi
 [concurrently]
 ```
 
-### 5. Technical Information
+### Technical Information
 
 ```
 ### All of my NPM
@@ -64,7 +64,7 @@ npm i -D nodemon concurrently
 
 ```
 
-### 6. Issues
+### Issues
 
 (we will see) 
 
