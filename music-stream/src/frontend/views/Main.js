@@ -1,7 +1,4 @@
 import Home from './Home';
-import Album from './album';
-import Song from './song';
-import Artist from './Artist';
 import Error404 from './Error404';
 import { Audioplayer } from './Audioplayer';
 import Header from './Header';
@@ -50,9 +47,6 @@ function Main(){
         <Route path='/upload' element={<Upload/>}/>
         <Route path='/library' element={<Library/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/album' element={<Album/>}/>
-        <Route path='/song' element={<Song/>}/>
-        <Route path='/artist' element={<Artist/>}/>
         <Route path="*" element={<Error404/>} />
         </Routes>
         </BrowserRouter>

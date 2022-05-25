@@ -7,7 +7,7 @@ This app is supposed to let you upload a mp3 file then be able to play it as whi
 ```
 
 ###  Demo
-(deployment here )
+https://music-app-939af.web.app/
 
 ### Technologies
 
@@ -66,7 +66,7 @@ npm i -D nodemon concurrently
 
 ### Issues
 
-(we will see) 
+
 
 
 ### CHANGELOG
