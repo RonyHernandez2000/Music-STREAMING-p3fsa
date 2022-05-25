@@ -22,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "backend": "cd src/backend && npm run server ",
+    "dev": "concurrently -n 'client, server' \"npm run start\"  \"npm run backend\""
   },
   "eslintConfig": {
     "extends": [
@@ -36,12 +38,14 @@
       "not dead",
       "not op_mini all"
     ],
-    "proxy": "http://localhost:5000",
-  
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16"
   }
 }

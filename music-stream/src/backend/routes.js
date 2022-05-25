@@ -1,4 +1,4 @@
-const Mp3 = require('../backend/mp3')
+const Mp3 = require('../backend/mp3');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     filename:(req,file, callback) =>{
         callback(null, file.originalname);
     }
-})
+});
 
 const upload = multer({storage: storage});
 // crud
@@ -22,7 +22,7 @@ const upload = multer({storage: storage});
 router.get("/", (req, res) => {
     Mp3.find()
         .then((mp3)=> res.json(mp3))
-        .catch((err) => res.status(400).json(`Error: ${err}`));
+        .catch(err => res.status(400).json(`Error: ${err}`));
 
 });
 
@@ -30,28 +30,25 @@ router.get("/", (req, res) => {
 router.post("/add", upload.single("mp3File"), (req,res)=> {
     const newMp3 = new Mp3({
         name: req.body.name,
-        size: req.body.name,
+        size: req.body.size,
         type: req.body.type,
         mp3File: req.file.originalname,
 
     })
-    newMp3
-        .save()
-        .then(() => res.json("New Article posted!"))
-        .catch((err) => res.status(400).json(`Error: ${err}`));
+    newMp3.save().then(() => res.json("New mp3 posted!")).catch((err) => res.status(400).json(`Error: ${err}`));
 
 });
 
 router.get("/:id", (req,res) => {
     Mp3.findById(req.params.id)
-        .then((mp3File) => res.json(mp3File))
+        .then((mp3) => res.json(mp3))
         .catch((err) => res.status(400).json(`Error: ${err}`))
 
 });
 
 router.put("/update/:id", upload.single("mp3File"), (req, res) => {
     Mp3.findById(req.params.id)
-        .then((mp3File) => {
+        .then((mp3) => {
             Mp3.name = req.body.name;
             Mp3.size = req.body.size;
             Mp3.type = req.body.type;
@@ -59,6 +56,6 @@ router.put("/update/:id", upload.single("mp3File"), (req, res) => {
 
         })
 
-})
+});
 
 module.exports = router;

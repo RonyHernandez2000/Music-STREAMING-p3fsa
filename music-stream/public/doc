@@ -17,3 +17,6 @@
 //  npm i express express-fileupload
 
 //npm i -D nodemon concurrently
+
+//npm install --save multer
+

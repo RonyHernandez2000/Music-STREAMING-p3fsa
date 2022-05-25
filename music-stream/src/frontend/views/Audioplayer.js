@@ -5,12 +5,17 @@ import {IoPlayForward} from "react-icons/io5"
 import{IoPlay} from "react-icons/io5"
 import{IoPauseSharp} from "react-icons/io5"
 
+
+
 const Audioplayer = () => {
   const  [isPlaying, SetIsPlaying]= useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0)
 
+ 
+
   //references
+  
   const audioPlayer = useRef();
   const progressBar = useRef();
   const animationRef = useRef();
@@ -71,7 +76,8 @@ const Audioplayer = () => {
 // Buttons
   return (
     <div className='audioPlayer'>
-        <audio ref={audioPlayer}  src='/upload/${}' preload='metadata'></audio>
+      
+        <audio ref={audioPlayer}  src='' preload='metadata'></audio>
         <button className='forwardBackward' onClick={backThirty}>30<IoPlayBack/></button>
         <button onClick={togglePlayPause} className='playPause'>{isPlaying ? <IoPauseSharp/>:<IoPlay className='play'/>}</button>
         <button className='forwardBackward' onClick={forwardThirty}> <IoPlayForward/>30 </button>
